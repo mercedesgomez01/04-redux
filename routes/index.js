@@ -10,8 +10,14 @@ router.get('/', function (req, res) {
 
 router.get('/puppies', function(req, res) {
   console.log('this is working');
-  res.sendFile(path.join(__dirname, '../public/stylesheets', 'style.css'));
+  //res.sendFile(path.join(__dirname, '../public/stylesheets', 'style.css'));
   //res.render('index.html');
+  res.render('index');
+});
+
+router.get( '/users/:name', function (req, res) {
+  res.render('index');
+  console.log( req.params.name ); // --> 'nimit'
 });
 
 module.exports = router;
