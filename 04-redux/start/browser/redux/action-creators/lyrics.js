@@ -1,8 +1,9 @@
-import {SET_LYRICS} from '../constants'; //import Constants from '.../constants';
+import {SET_LYRICS} from '../../react/constants'; //import Constants from '.../constants';
 
-function setLyrics (text){
+export const setLyrics = function (text){
 	return {
 		type: SET_LYRICS,
 		lyric: text
 	};
 }
+
