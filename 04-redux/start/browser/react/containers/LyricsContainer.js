@@ -6,7 +6,30 @@ export default class LyricsContainer extends React.Component {
   constructor(){
     super()
 
-    this.state = store.getState();
+    this.state = Object.assign({
+      artistQuery: "",
+      songQuery: ""},
+      store.getState()
+      );
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+
+  }
+
+  setArtists(selectedArtist){
+    this.setState({
+      artistQuery:selectedArtist
+    })
+  }
+
+  setSong(selectedSong){
+    this.setState({
+      songQuery:selectedSong
+    })
+  }
+
+  handleSubmit(submitted){
+    console.log(this.state)
   }
 
   componentDidMount(){
